@@ -5,6 +5,24 @@ class AppLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.red,
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.blue,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
