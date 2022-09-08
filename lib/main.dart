@@ -17,7 +17,10 @@ class App extends StatelessWidget {
       title: 'Admin Dashboard',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        appBarTheme: Theme.of(context).appBarTheme.copyWith(elevation: 0),
+        appBarTheme: Theme.of(context).appBarTheme.copyWith(
+              elevation: 0,
+              color: Colors.white,
+            ),
         textTheme: GoogleFonts.mulishTextTheme(
           Theme.of(context).textTheme,
         ).apply(
