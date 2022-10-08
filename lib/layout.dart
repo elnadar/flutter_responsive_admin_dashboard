@@ -4,12 +4,31 @@ import 'package:admin_dashboard/widgets/small_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppLayout extends StatelessWidget {
-  const AppLayout({Key? key}) : super(key: key);
-
+  AppLayout({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        key: scaffoldKey,
+        leading: !ResponsiveWidget.isSmallScreen(context)
+            ? Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14),
+                    child: Image.asset(
+                      'assets/icons/logo.png',
+                      width: 28,
+                    ),
+                  )
+                ],
+              )
+            : IconButton(
+                onPressed: () {
+                  scaffoldKey.currentState?.openDrawer();
+                },
+                icon: const Icon(Icons.menu)),
+      ),
       body: const ResponsiveWidget(
         largeScreen: LargeScreen(),
         mediumScreen: LargeScreen(

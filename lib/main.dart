@@ -36,7 +36,7 @@ class App extends StatelessWidget {
           },
         ),
       ),
-      home: const AppLayout(),
+      home: AppLayout(),
       debugShowCheckedModeBanner: false,
     );
   }
