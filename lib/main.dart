@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/constants/style.dart';
 import 'package:admin_dashboard/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return GetMaterialApp(
       title: 'Admin Dashboard',
       theme: ThemeData(
@@ -20,9 +22,12 @@ class App extends StatelessWidget {
         appBarTheme: Theme.of(context).appBarTheme.copyWith(
               elevation: 0,
               color: Colors.white,
+              iconTheme: theme.iconTheme.copyWith(
+                color: dark,
+              ),
             ),
         textTheme: GoogleFonts.mulishTextTheme(
-          Theme.of(context).textTheme,
+          theme.textTheme,
         ).apply(
           bodyColor: Colors.black,
         ),
