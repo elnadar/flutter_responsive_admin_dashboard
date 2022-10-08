@@ -1,3 +1,6 @@
+import 'package:admin_dashboard/helpers/responsiveness.dart';
+import 'package:admin_dashboard/widgets/large_screen.dart';
+import 'package:admin_dashboard/widgets/small_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppLayout extends StatelessWidget {
@@ -7,21 +10,9 @@ class AppLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-        ],
+      body: const ResponsiveWidget(
+        largeScreen: LargeScreen(),
+        smallScreen: SmallScreen(),
       ),
     );
   }
