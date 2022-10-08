@@ -12,6 +12,10 @@ class AppLayout extends StatelessWidget {
       appBar: AppBar(),
       body: const ResponsiveWidget(
         largeScreen: LargeScreen(),
+        mediumScreen: LargeScreen(
+          sideBarFlex: 3,
+          mainBarFlex: 6,
+        ),
         smallScreen: SmallScreen(),
       ),
     );
